@@ -1,0 +1,34 @@
+<div class="card mb-2">
+    <div class="card-header d-flex justify-content-between align-items-center">
+       <div class="column">
+        <h3>Evento {{task.description}}</h3>
+        <p>Sala {{task.title }}</p>
+        <p>Fecha {{task.dia}}</p>
+        <p>Edificio {{task.edificio}}</p>
+        <p>Hora {{task.hora}}</p>
+       </div>
+        <div>
+            <button (click)="task.hide = !task.hide" class="btnE">
+                Editar
+            </button>
+            <button (click)="deleteTask(task)" class="btnD">
+                Eliminar
+            </button>
+        </div>
+    </div>
+    <div class="column" [hidden]="task.hide">
+       <div class="card">
+        <div>
+            <form>
+            <input type="text" placeholder={{task.title}}>
+            <input type="text" placeholder={{task.description}}>
+            <input type="date" placeholder={{task.dia}}>
+            <input type="text" placeholder={{task.edificio}}>
+            <input type="text" placeholder={{task.hora}}>
+        </form>
+        </div>
+       </div>
+        <button type="submit" class="btnG">Guardar</button>
+        
+    </div>
+</div>
